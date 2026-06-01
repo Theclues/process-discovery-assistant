@@ -1,0 +1,6 @@
+{
+  "deepseekApiKey": "your-deepseek-api-key-here",
+  "deepseekModel": "deepseek-v4-pro",
+  "deepseekBaseUrl": "https://api.deepseek.com",
+  "port": 3000
+}

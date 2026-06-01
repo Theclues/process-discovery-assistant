@@ -1,0 +1,33 @@
+{
+  "name": "process-discovery-assistant",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "dev:ui": "cd client && npx vite",
+    "start": "tsx src/main.ts",
+    "build": "cd client && npx vite build && cd .. && tsc",
+    "build:ui": "cd client && npx vite build",
+    "test": "npx tsx tests/graph.test.ts && npx tsx tests/detector.test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "AI-powered business process discovery assistant using DeepSeek V4 Pro",
+  "dependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@xyflow/react": "^12.10.2",
+    "better-sqlite3": "^12.10.0",
+    "express": "^5.2.1",
+    "openai": "^6.39.1",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.1",
+    "@types/uuid": "^11.0.0",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}

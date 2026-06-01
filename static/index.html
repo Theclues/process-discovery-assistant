@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>流程发现助手</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="app">
+
+<!-- Header -->
+<header>
+  <h1>🔍 流程发现助手</h1>
+  <div class="header-stats" id="headerStats"></div>
+  <div class="header-actions">
+    <button id="btnNew" onclick="newSession()">新建会话</button>
+    <button id="btnConclude" onclick="concludeSession()" disabled>完成建模</button>
+  </div>
+</header>
+
+<!-- Main Layout -->
+<div class="main">
+  <!-- Chat Panel -->
+  <div class="chat-panel" id="chatPanel">
+    <div class="messages" id="messages"></div>
+    <div class="input-area">
+      <textarea id="userInput" rows="3" placeholder="描述你的工作流程...&#10;例如: 我每天早上先查看邮件，如果有紧急请求就马上处理，不紧急的放到下午..."
+        disabled></textarea>
+      <button id="btnSend" onclick="sendMessage()" disabled>发送</button>
+    </div>
+  </div>
+
+  <!-- Right Panel: Diagram + Report -->
+  <div class="right-panel">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('diagram')">流程图</button>
+      <button class="tab" onclick="switchTab('report')">分析报告</button>
+    </div>
+    <div class="tab-content">
+      <div id="tabDiagram" class="tab-pane active">
+        <div class="mermaid-container" id="mermaidContainer">
+          <p class="placeholder">开始对话后，流程图将在此显示</p>
+        </div>
+      </div>
+      <div id="tabReport" class="tab-pane">
+        <div id="reportContent">
+          <p class="placeholder">完成建模后可查看分析报告</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
